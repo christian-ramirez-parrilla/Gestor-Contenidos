@@ -1,0 +1,2 @@
+# Gestor-Contenidos
+ Landing en la que el cliente podrá modificar su contenido sin tener conocimientos de programación. Podra insertar, actualizar o eliminar diferentes elementos de su landing utilizando una sesión de gestor, previamente sera necesario su registro en una base de datos para poder acceder al gestor y modificar la landing. Mediante el gestor también podrá controlar su blog programando la publicación de los diferentes post
