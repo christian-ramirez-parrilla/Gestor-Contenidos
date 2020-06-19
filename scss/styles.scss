@@ -1,0 +1,258 @@
+// Importamos los diferentes archivos con el resto de SCSS
+@import "variables", "reset", "mixins", "keyframes";
+
+body {
+  @include flexible(column, nowrap, center, center, auto);
+  background: #f0f0f0;
+  min-height: 100vh;
+}
+
+a{
+  color:rgb(62, 132, 218);
+  font-weight: bold;
+  transition: all .4s ease;
+  &:hover{
+    color:rgb(34, 72, 120);
+  }
+}
+
+
+
+
+header{
+  width:100%;
+  background-color: #f0f0f0;
+  padding:20px 0 ;
+  box-shadow: 0 0 20px rgba(0,0,0,.1);
+  @include flexible( row , nowrap , space-around , center , auto );
+
+  ul{
+    @include flexible( row, nowrap , center , center , auto );
+    
+    li{
+      margin:0 10px;
+    }
+  }
+}
+
+main{
+  width:80%;
+  max-width: 1200px;
+  margin:auto;
+  padding:20px;
+  text-align: center;
+
+  section{
+    margin: 0 0 20px;
+    padding:20px;
+    .encuadre{
+      @include flexible(column,nowrap,center,center,auto);
+      .titulobl{
+        margin-bottom: 30px;
+      }
+      .pbl{
+        text-align: left;
+        width: 40%;
+        margin-bottom: 30px;
+      }
+
+    }
+    
+  }
+
+}
+
+footer{
+  width:100%;
+  background-color: #282828;
+  padding:20px 0;
+
+  @include flexible(column, nowrap ,center , center ,auto );
+
+  ul{
+    @include flexible(row, nowrap ,center , center ,auto );
+
+    li{
+      margin:0 10px;
+    }
+  }
+  a{
+    color:white;
+  }
+  form{
+    width:100%;
+    @include flexible(row, nowrap ,center , center ,auto );
+    padding:20px 0;
+    margin:20px 0;
+
+    [type="email"]{
+      background: #f8f8f8;
+      padding:10px 20px;
+      border-radius: 3px 0px 0px 3px;
+    }
+    [type="password"]{
+      background: #f8f8f8;
+      padding:10px 20px;
+      border-left: 1px solid grey;
+    }
+    [type="submit"]{
+      background: lightgreen;
+      padding:10px 20px;
+      border-radius: 0px 3px 3px 0px;
+    }
+  }
+}
+
+.gestor{
+
+  header{
+    position: fixed;
+    top:0;    
+    z-index: 10;
+  }
+  &__section{
+    @include flexible( row , wrap , space-between , center , auto );
+    opacity: 0.5;
+    transform: scale(.8);
+    transition: all .4s ease;
+
+    &:hover{
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  &__ul{
+    width:48%;
+    min-height: 600px;
+    background: #f8f8f8;
+    padding:40px;
+    border-radius: 10px;
+    
+    &>:first-child{
+      font-family: Georgia;
+      font-style: italic;
+      color:grey;
+    }
+    li{
+      @include flexible( row , nowrap , space-between , center , auto);
+      margin:10px 0;
+    }
+  }
+  &__h2{
+    width:100%;
+    margin:40px 0;
+
+    &--grande{
+      background: #f8f8f8;
+      padding:20px;
+      border-radius: 10px;
+    }
+  }
+  
+  &__form{
+    width: 48%;
+    
+    min-height: 600px;
+    background: #f8f8f8;
+    padding:50px;
+    border-radius: 10px;
+    
+    .checkbox{
+      width:100%;
+      background: white;
+      @include flexible(row, nowrap , flex-start , center , auto);
+      margin:10px;
+      padding:20px;
+      border-radius: 10px;
+    }
+    [type="text"] ,  [type="number"], textarea{
+      width:100%;
+      background:white;
+      margin:10px;
+      padding:20px;
+      border-radius: 10px;
+      outline: none;
+      border:2px solid transparent;
+      transition: all .4s ease;
+      &:focus{
+        border-color:rgb(62, 132, 218);
+      }
+    }
+    textarea{
+      width:100%;
+      min-height: 150px;
+    }
+    [type="checkbox"]{
+      margin: 0 0 0 10px;
+    }
+    [type="submit"]{
+      width:100%;
+      margin:10px;
+      padding:20px;
+      background:lightgrey;
+      border-radius: 10px;
+      transition: all .5s ease;
+      font-size: .8em;
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+      cursor: pointer;
+      &:hover{
+        color:white;
+        background:rgb(62, 132, 218);
+      }
+      &:active{
+        color:white;
+        background:black;
+      }
+    }
+  }
+  
+  .message{
+    position: fixed;
+    width:100%;
+    
+    text-align: center;
+    padding: 0px 0;
+    top:60px;
+    left:0px;
+    @include flexible( row , nowrap , center , center , auto );
+
+    &--ok{
+      background: aquamarine;
+    }
+    &--error{
+      background: salmon;
+      color:white;
+      margin-top: 30px;
+    }
+    &__cerrar{
+      font-size: 2em;
+      margin: 20px;
+    }
+  }
+  .formReg{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    [type="email"]{
+      background-color: white;
+      padding: 10px 20px;
+      border-radius: 0px 3px 3px 0px;
+    }
+    [type="password"]{
+      background-color: white;
+      padding: 10px 20px;
+      border-radius: 0px 3px 3px 0px;
+    }
+    [type="submit"]{
+      background: lightgreen;
+      padding: 10px 20px;
+      border-radius: 0px 3px 3px 0px;
+    }
+  }
+
+}
